@@ -6,10 +6,7 @@ import Cookies from 'js-cookie';
 
 function Home() {
   const navigate = useNavigate();
-  const _context = useContext(Context);  
-  if(_context.token) {
-    navigate('/todo');
-  }
+  const _context = useContext(Context);    
 
   // swith dark and light mode
   const handleSwitchMode = () => {

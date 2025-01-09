@@ -31,7 +31,11 @@ function Todo() {
       setTodos(res.data.todo_list);
       setDeleteAction('');
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      if(err.code == "ERR_NETWORK") {
+        navigate('/');
+      }
+    });
   }, [deleteAction]);
 
   // logout
